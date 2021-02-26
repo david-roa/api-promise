@@ -1,1 +1,7 @@
-<h1>Hello {{name}}!</h1>
+<ng-container *ngIf="source">
+  <h1>Artist: <strong>{{source.name}}!</strong></h1>
+  <p>Genres:</p>
+  <ul *ngFor="let gen of source.genres">
+    <li>{{gen}}</li>
+  </ul>
+</ng-container>
