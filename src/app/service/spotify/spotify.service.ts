@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpHelperService } from "../http/http.service";
+import { Artist } from "../../interfaces/artists";
 
 @Injectable({
   providedIn: "root"
@@ -9,7 +10,7 @@ export class SpotifyService {
 
   constructor(private helperService: HttpHelperService) {}
 
-  getArtists(id: string): Promise<any> {
+  getArtists(id: string): Promise<Artist> {
     return new Promise((resolve, reject) => {
       this.helperService.getRequest(this.BASE_URL + id, resolve, reject);
     });

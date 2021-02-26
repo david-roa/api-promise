@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Artist } from "../interfaces/artists";
 import { SpotifyService } from "../service/spotify/spotify.service";
 
 @Component({
@@ -8,9 +9,11 @@ import { SpotifyService } from "../service/spotify/spotify.service";
 export class HelloComponent implements OnInit {
   @Input() name: string;
   private artist = "7jy3rLJdDQY21OgRLCZ9sD";
-  public source: any;
+  public source: Artist;
 
-  constructor(private spotifyService: SpotifyService) {}
+  constructor(private spotifyService: SpotifyService) {
+    this.source = {}as Artist;
+  }
 
   ngOnInit() {
     this.spotifyService.getArtists(this.artist).then(data => {
