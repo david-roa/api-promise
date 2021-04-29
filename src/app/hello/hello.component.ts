@@ -12,12 +12,15 @@ export class HelloComponent implements OnInit {
   public source: Artist;
 
   constructor(private spotifyService: SpotifyService) {
-    this.source = {}as Artist;
+    this.source = {} as Artist;
   }
 
-  ngOnInit() {
-    this.spotifyService.getArtists(this.artist).then(data => {
+  async ngOnInit() {
+    console.log("hola 1", this.source);
+    await this.spotifyService.getArtists(this.artist).then(data => {
+      console.log("Hola 2", data);
       this.source = data;
     });
+    console.log("hola 3", this.source);
   }
 }

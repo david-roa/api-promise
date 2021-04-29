@@ -13,7 +13,8 @@ export class HttpHelperService {
   private static getOptionsHeaders() {
     return {
       headers: new HttpHeaders({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Autorization: "BQAqeYitdt0-Chk9gNcMeMOXecEoj_EV2DBx57muCp2d-NuuRCfek1c3ZCBMo4UKd6JsromhCxHXVmJvmm_upIwLE33Xlz2JGyH30k7Yp2ia0HnSfrvi9Jd4pUiWimgd2DR3-ILvbFZJZC2WeOpmqYduqPxzfHWGvvklbuQG-VSzpt3uf6Czcw"
       })
     };
   }
