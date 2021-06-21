@@ -16,6 +16,7 @@ export class HelloComponent implements OnInit {
   }
 
   async ngOnInit() {
+    
     console.log("hola 1", this.source);
     await this.spotifyService.getArtists(this.artist).then(data => {
       console.log("Hola 2", data);
